@@ -716,4 +716,22 @@ Once the services are running, you can access interactive API documentation:
 ## Support
 
 For issues and questions, please [create an issue](link-to-issues) or contact the development team.
+## UI screen
+
+![IMG-20251230-WA0038](https://github.com/user-attachments/assets/09313a07-7714-40cb-aafb-f3deb02adc72)
+![IMG-20251230-WA0037](https://github.com/user-attachments/assets/ffb497f6-34f1-49f3-981f-df11b7ac05c4)
+![IMG-20251230-WA0036](https://github.com/user-attachments/assets/3a2de1d6-a571-4d38-a8fe-5166ee1dfa3b)
+![IMG-20251230-WA0035](https://github.com/user-attachments/assets/e6534a4f-e92b-400a-b9fb-354c2e7f2d5d)
+![IMG-20251230-WA0034](https://github.com/user-attachments/assets/12ad48ea-5321-4571-9426-f9ce4e6a9946)
+![IMG-20251230-WA0033](https://github.com/user-attachments/assets/d43e4c2c-e113-436e-8b43-8a505974157d)
+![IMG-20251230-WA0032](https://github.com/user-attachments/assets/18f7ffcf-e01c-4f79-a657-3bbfefc11bee)
+![IMG-20251230-WA0031](https://github.com/user-attachments/assets/05d98cb1-d63c-4b95-8ee3-6ae7e3ff40b4)
+![IMG-20251230-WA0030](https://github.com/user-attachments/assets/132ebee9-1cde-4cf0-9c53-064d1d5b2618)
+[create an issue](link-to-issues) or contact the development team.
+
+##Report
+
+
+[ProEventa_Academic_Report.pdf](https://github.com/user-attachments/files/24387892/ProEventa_Academic_Report.pdf)
+
 
