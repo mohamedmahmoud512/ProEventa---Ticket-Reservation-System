@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>It's Showtime - Login</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="../assets/logo2.png" alt="logo">
+      <div>It's Showtime</div>
+    </div>
+    <nav class="nav-menu">
+      <a href="../index.html">Home</a>
+      <a href="theatres.html">Theatres</a>
+      <a href="movies.html">Movies</a>
+      <a href="events.html">Events</a>
+      <a href="login.html" id="login-link" style="color: darkred;">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="login-form">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="email" id="Email" required placeholder="Enter Your Email ....">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" required placeholder="Enter Your password ....">
+        </div>
+        
+        <button id="Login" type="button" class="btn" style="display: block;">Login</button>
+        <p style="display: inline-block ;margin-left: 10px; margin-right: 10px; ">Don't have an account?</p><a href="signUp.html" style="color: antiquewhite;">SignUP</a>
+      </form>
+      <p id="FoundError" style="display: none; color: rgb(115, 67, 67);">No users registered yet</p>
+    </div>
+    <!-- <div class="container position-absolute top-50 start-50 translate-middle style d-flex justify-content-center flex-wrap ps-5 pe-5">
+        <h1 class="w-100 text-center">Login page</h1>
+        <input type="email" id="Email" placeholder="Enter Your Email ...."
+            class="w-100 mt-3 p-1 form-control bg-transparent text-light">
+        <input type="password" id="Password" placeholder="Enter Your Password ...."
+            class="w-100 mt-3 p-1 text-light form-control mb-4 bg-transparent">
+        <p id="FoundError" class=" w-100 text-center text-danger fs-4 d-none">No users registered yet</p>
+        <button id="Login" class="btn btn-outline-info w-100 mt-3 mb-3"> Login </button>
+        <p class="mb-5 text-center text-light">Don't have an account?</p><a href="signUp.html">SignUP</a>
+    </div> -->
+  </main>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

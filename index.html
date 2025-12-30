@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>It's Showtime - Now Showing</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="assets/logo2.png" alt="logo" />
+        <div>It's Showtime</div>
+      </div>
+
+      <!-- <div class="search-bar">
+        <select id="searchCategory" class="search-select">
+          <option value="movies">Movies</option>
+        </select>
+        <input id="searchInput" placeholder="Search movies..." />
+      </div> -->
+
+      <nav class="nav-menu">
+        <a href="index.html" style="color: darkred">Home</a>
+        <a href="pages/theatres.html">Theatres</a>
+        <a href="pages/movies.html">Movies</a>
+        <a href="pages/events.html">Events</a>
+        <a href="pages/login.html" id="login-link">Login</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Welcome to ProEventa</h1>
+      <p>
+        Your ultimate destination for movies, theatres, and events. Book tickets
+        easily and enjoy the show!
+      </p>
+
+      <section class="movies-section">
+        <h2>All Movies</h2>
+        <div id="home-movies-grid" class="movie-grid"></div>
+      </section>
+
+      <section class="events-section">
+        <h2>All Events</h2>
+        <div id="home-events-grid" class="event-grid"></div>
+      </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/movies-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+      <script>
+    // Render movies on home page
+    function renderHomeMovies() {
+      const grid = document.getElementById('home-movies-grid');
+      grid.innerHTML = '';
+      MOVIES.forEach(m => {
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.innerHTML = `
+          <img src="./js/${m.poster}" alt="${m.title}">
+          <div class="movie-title">${m.title}</div>
+          <div class="movie-meta">⭐ ${m.rating} · ${m.year}</div>
+        `;
+        card.addEventListener('click', () => {
+          window.location.href = `detail.html?id=${m.id}`;
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    // Render events on home page
+    function renderHomeEvents() {
+      const grid = document.getElementById('home-events-grid');
+      grid.innerHTML = '';
+      const events = getEvents();
+      events.forEach(e => {
+        const card = document.createElement('div');
+        card.className = 'event-card';
+        const imageHtml = e.image ? `<img src="${e.image}" alt="${e.title}" class="event-image">` : '';
+        card.innerHTML = `
+          ${imageHtml}
+          <div class="event-name">${e.title}</div>
+          <div class="event-meta">${new Date(e.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} • ${e.venue}, ${e.address}</div>
+          <button class="btn book-event">Book Now</button>
+        `;
+        const bookBtn = card.querySelector('.book-event');
+        bookBtn.addEventListener('click', () => {
+          window.location.href = `booking.html?type=event&id=${e.id}`;
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHomeMovies();
+      renderHomeEvents();
+    });
+  </script>
+  </body>
+</html>

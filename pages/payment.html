@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>It's Showtime - Payment</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <div class="payment-card">
+      <div class="header">
+        <div class="title-section">
+          <span class="card-icon">💳</span>
+          <h2>payment</h2>
+        </div>
+        <div class="card-logos">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+            alt="Visa"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+            alt="Mastercard"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+            alt="Amex"
+          />
+        </div>
+      </div>
+      <div>
+        <form id="payment-form">
+          <div class="input-group">
+            <label>Name on cart</label>
+            <input type="text" placeholder="Enter Name" required />
+          </div>
+
+          <div class="input-group">
+            <label>cart number</label>
+            <div class="card-number-wrapper">
+              <input
+                type="text"
+                id="cardNumber"
+                placeholder="0000 0000 0000 0000"
+                maxlength="19"
+                required
+              />
+              <span class="inner-icon" style="margin-left: 340px;">🔒</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-group">
+              <label>Expiry date</label>
+              <p class="hint">Formula MM/YY</p>
+              <input
+                type="text"
+                id="expiry"
+                placeholder="MM / YY"
+                maxlength="5"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Security code (CVV)</label>
+              <p class="hint">Numbers on the back of the card</p>
+              <input
+                type="password"
+                id="cvv"
+                placeholder="***"
+                maxlength="4"
+                required
+              />
+            </div>
+          </div>
+
+          <button id="SupmetBtn" class="pay-btn">Pay Now</button>
+        </form>
+      </div>
+    </div>
+    <div id="successMessage" style="display: none; text-align: center">
+      <h2 style="color: green">✔ Success!</h2>
+      <p>Your payment has been processed successfully.</p>
+    </div>
+    <script src="../js/payment.js"></script>
+    <!-- Use PayPal Sandbox for testing: 'sb' is the demo sandbox client ID. Replace with your sandbox client ID if available. -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script src="../js/movies-data.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/payment.js"></script>
+    <script>
+      let SupmetBtn = document.getElementById("SupmetBtn");
+      SupmetBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Here you would normally process the payment details securely
+        // For this demo, we'll just show a success message
+        document.querySelector(".payment-card").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        window.setTimeout(function () {
+          window.location.href = "../index.html";
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

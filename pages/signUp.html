@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>It's Showtime - Login</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="../assets/logo2.png" alt="logo" />
+        <div>It's Showtime</div>
+      </div>
+      <nav class="nav-menu">
+        <a href="../index.html">Home</a>
+        <a href="theatres.html">Theatres</a>
+        <a href="movies.html">Movies</a>
+        <a href="events.html">Events</a>
+        <a href="login.html" id="login-link" style="color: darkred">Login</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="login-form">
+        <h1>signUp</h1>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <input type="text" id="Name" placeholder="Enter Your Name ...."
+            class="w-100 mt-3 p-1 form-control bg-transparent text-light">
+            <label for="username">Email:</label>
+            <input
+              type="email"
+              id="Email"
+              required
+              placeholder="Enter Your Email ...."
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="Password"
+              required
+              placeholder="Enter Your password ...."
+            />
+          </div>
+          <button id="SignUP" class="btn">signUp</button>
+        </form>
+        <p id="errorMsg" style="color: red; display: none"></p>
+        <p id="error" style="display: none; color: seagreen;">
+          Email already exists
+        </p>
+        <p id="validate" style="display: none; color: seagreen;">
+          Enter a validate Email
+        </p>
+        <p id="errorInput" style="display: none; color: seagreen;">
+          All inputs is required
+        </p>
+        <p id="done" style="display: none; color: seagreen;">
+          Success
+        </p>
+        <p style="display: inline-block ;margin-left: 10px;margin-right: 10px;">You have an account?</p>
+        <a href="login.html" style="display: inline-block; color: antiquewhite;">Sign in</a>
+      </div>
+      <!-- <div class="container position-absolute top-50 start-50 translate-middle style d-flex justify-content-center flex-wrap ps-5 pe-5">
+        <h1 class="w-100 text-center">Login page</h1>
+        <input type="email" id="Email" placeholder="Enter Your Email ...."
+            class="w-100 mt-3 p-1 form-control bg-transparent text-light">
+        <input type="password" id="Password" placeholder="Enter Your Password ...."
+            class="w-100 mt-3 p-1 text-light form-control mb-4 bg-transparent">
+        <p id="FoundError" class=" w-100 text-center text-danger fs-4 d-none">No users registered yet</p>
+        <button id="Login" class="btn btn-outline-info w-100 mt-3 mb-3"> Login </button>
+        <p class="mb-5 text-center text-light">Don't have an account?</p><a href="signUp.html">SignUP</a>
+    </div> -->
+    </main>
+
+    <script src="../js/SignUpPage.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

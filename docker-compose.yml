@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: ./app/auth-service
+    ports:
+      - "8001:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user:password@db:5432/auth_db
+    depends_on:
+      - db
+
+  event-service:
+    build: ./app/event-service
+    ports:
+      - "8002:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user:password@db:5432/event_db
+    depends_on:
+      - db
+
+  reservation-service:
+    build: ./app/reservation-service
+    ports:
+      - "8003:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user:password@db:5432/reservation_db
+    depends_on:
+      - db
+
+  api-gateway:
+    build: ./app/api-gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=your-secret-key
+    depends_on:
+      - auth-service
+      - event-service
+      - reservation-service
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ticket_reservation
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
